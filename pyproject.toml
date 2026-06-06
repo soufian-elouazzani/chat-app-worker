@@ -1,0 +1,17 @@
+[project]
+name = "chat-app-worker"
+version = "0.1.0"
+description = "Async worker that consumes chat tasks from RabbitMQ and calls Ollama"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aio-pika>=9.5.8",
+    "asyncpg>=0.31.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.13.4",
+    "redis>=8.0.0",
+    "sqlalchemy>=2.0.50",
+]
+
+[project.scripts]
+chat-worker = "app.main:run"
